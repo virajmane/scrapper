@@ -29,4 +29,5 @@ print("Please insert the path of the file\n")
 file = input(str())
 phonescrap(file)
 emailscrap(file)
+#Scrapper
 
