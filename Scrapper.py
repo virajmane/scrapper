@@ -4,7 +4,7 @@ import pyperclip
 def phonescrap(file):
     exp = re.compile(r"\d{10}|[+\d\d]?\d{12}")
     found = []
-    with open(file, encoding="utf8") as file:
+    with open("{}".format(file), encoding="utf8") as file:
         reading = file.readlines()
     for i in reading:
         found += exp.findall(i)
@@ -16,7 +16,7 @@ def phonescrap(file):
 def emailscrap(file):
     exp = re.compile(r"[A-Za-z_.0-9]*@\w{4,7}.com")
     found = []
-    with open(file, encoding="utf8") as mails:
+    with open("{}".format(file), encoding="utf8") as mails:
         reading = mails.readlines()
     for i in reading:
         found += exp.findall(i)
@@ -25,5 +25,8 @@ def emailscrap(file):
     with open("scrapped.txt", "a") as write:
         write.writelines("\nEmails Are:\n")
         write.writelines("\n".join(found))
-phonescrap("Sample.txt")
-emailscrap("Sample.txt")
+print("Please insert the path of the file")
+file = input(str())
+phonescrap(file)
+emailscrap(file)
+
