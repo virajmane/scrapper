@@ -25,7 +25,7 @@ def emailscrap(file):
     with open("scrapped.txt", "a") as write:
         write.writelines("\nEmails Are:\n")
         write.writelines("\n".join(found))
-print("Please insert the path of the file")
+print("Please insert the path of the file\n")
 file = input(str())
 phonescrap(file)
 emailscrap(file)
